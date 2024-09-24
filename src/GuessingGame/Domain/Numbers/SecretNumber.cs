@@ -2,4 +2,10 @@
 
 namespace GuessingGame.Domain.Numbers;
 
-internal class SecretNumber(int Value) : Number(Value);
+internal class SecretNumber : Number
+{
+    public SecretNumber(MinimumNumber minimumNumber, MaximumNumber maximumNumber)
+        : base(new Random().Next(minimumNumber.Value, maximumNumber.Value))
+    {
+    }
+}
